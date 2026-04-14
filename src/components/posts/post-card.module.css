@@ -1,0 +1,29 @@
+/**
+ * Minimal layout accents (stack also uses Tailwind + Shadcn).
+ * Keeps hover/focus transitions in one place for the list cards.
+ */
+.card {
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.card:hover {
+  border-color: color-mix(in oklab, var(--ring) 55%, transparent);
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--foreground) 6%, transparent);
+}
+
+.card:focus-within {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 35%, transparent);
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: none;
+}
